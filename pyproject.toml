@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=70", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "xray-image-simulator"
+version = "0.1.0"
+dependencies = [
+    "numpy",
+    "pillow",
+    "matplotlib",
+]
+
+# 追加ブロック: src レイアウトを宣言
+[tool.setuptools]
+package-dir = {"" = "src"}          # ← ここが特に重要
+
+[tool.setuptools.packages.find]
+where = ["src"]
